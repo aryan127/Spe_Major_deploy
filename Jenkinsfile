@@ -46,8 +46,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-        GIT_CREDENTIALS = credentials('git-credentials')
+        IMAGE_NAME=''
     }
 
     stages {
