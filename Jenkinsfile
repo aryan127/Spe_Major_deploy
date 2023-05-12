@@ -47,6 +47,7 @@ pipeline {
 
     environment {
         IMAGE_NAME=''
+        KUBECONFIG='/home/aryan/Desktop/Placement/Spe_Major_deploy/auth.yml'
     }
 
     stages {
@@ -90,9 +91,8 @@ pipeline {
 
         stage('Deploy application using Ansible') {
             steps {
-                sh "cd /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible && ansible-playbook /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/deploy.yml -i /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/inventory"
+                sh " cd /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible && ansible-playbook -i inventory deploy.yml"
             }
         }
-
     }
 }
