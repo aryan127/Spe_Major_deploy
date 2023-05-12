@@ -2,16 +2,15 @@
 - name: Deploy placement app
   hosts: all
   tasks:
-   
     - name: Copy backend deployment file
-        copy:
-          src: ./kubernetes/backend.yml
-          dest: ./
-      
+      copy:
+        src: ./kubernetes/backend.yml
+        dest: ./
+
     - name: Copy frontend deployment files
-        copy:
-          src: ./kubernetes/frontend.yml
-          dest: ./
+      copy:
+        src: ./kubernetes/frontend.yml
+        dest: ./
 
     - name: apply backend
       become: true
