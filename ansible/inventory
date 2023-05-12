@@ -1,2 +1,2 @@
 [localhost]
-aryan ansible_connection=local 
+aryan ansible_connection=local
