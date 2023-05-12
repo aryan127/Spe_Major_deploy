@@ -89,8 +89,8 @@ pipeline {
             }
         }
 
-        stage('Deploy application using Ansible') {
-            steps {
+       stage("Ansible Deploy"){
+            steps{
                 sh "ansible-playbook -i inventory deploy.yml"
             }
         }
