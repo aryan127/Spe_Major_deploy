@@ -90,8 +90,9 @@ pipeline {
 
         stage('Deploy application using Ansible') {
             steps {
-                sh " cd /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible && ansible-playbook -i inventory deploy.yml"
+                sh "cd /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible && ansible-playbook /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/deploy.yml -i /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/inventory"
             }
         }
+
     }
 }
