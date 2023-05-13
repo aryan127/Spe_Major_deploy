@@ -51,13 +51,13 @@ pipeline {
     }
 
     stages {
-        // stage('Clone configuration repository') {
-        //     steps {
-        //         checkout([$class: 'GitSCM', 
-        //                   branches: [[name: '*/master']], 
-        //                   userRemoteConfigs: [[url: 'https://github.com/aryan127/Spe_Major_deploy.git']]])
-        //     }
-        // }
+        stage('Clone configuration repository') {
+            steps {
+                checkout([$class: 'GitSCM', 
+                          branches: [[name: '*/master']], 
+                          userRemoteConfigs: [[url: 'https://github.com/aryan127/Spe_Major_deploy.git']]])
+            }
+        }
 
         stage('Build and push frontend image') {
             steps {
@@ -89,11 +89,11 @@ pipeline {
             }
         }
         
-        stage ("Cloning config repo"){
-            steps{
-                git 'https://github.com/aryan127/Spe_Major_deploy.git'
-            }
-        }
+        // stage ("Cloning config repo"){
+        //     steps{
+        //         git 'https://github.com/aryan127/Spe_Major_deploy.git'
+        //     }
+        // }
 
        stage("Ansible Deploy"){
             steps{
