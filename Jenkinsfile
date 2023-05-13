@@ -46,10 +46,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME=''
-       
+        IMAGE_NAME=''  
     }
-
     stages {
         stage('Clone configuration repository') {
             steps {
@@ -58,7 +56,6 @@ pipeline {
                           userRemoteConfigs: [[url: 'https://github.com/aryan127/Spe_Major_deploy.git']]])
             }
         }
-
         stage('Build and push frontend image') {
             steps {
                 checkout([$class: 'GitSCM', 
@@ -88,17 +85,10 @@ pipeline {
                 }
             }
         }
-        
-        // stage ("Cloning config repo"){
-        //     steps{
-        //         git 'https://github.com/aryan127/Spe_Major_deploy.git'
-        //     }
-        // }
-
        stage("Ansible Deploy"){
             steps{
-                sh "ansible-playbook -i /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/inventory /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/deploy.yml
-"
+                sh "ansible-playbook -i /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/inventory /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/deploy.yml"
+
             }
         }
     }
