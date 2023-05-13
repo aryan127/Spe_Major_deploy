@@ -1,2 +1,0 @@
-[localhost]
-server0 ansible_host=172.16.141.185 ansible_connection=ssh ansible_ssh_user=ansible_user ansible_ssh_pass=aryan ansible_sudo_pass=aryan ansible_ssh_extra_args='-o StrictHostKeyChecking=no'

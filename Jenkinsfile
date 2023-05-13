@@ -97,7 +97,8 @@ pipeline {
 
        stage("Ansible Deploy"){
             steps{
-                sh "ansible-playbook -i inventory deploy.yml"
+                sh "ansible-playbook -i /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/inventory /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible/deploy.yml
+"
             }
         }
     }
