@@ -3,10 +3,10 @@
   hosts: all
   tasks:
     - name: delete previous backend yml
-      shell: kubectl delete /home/aryan/Desktop/Placement/Spe_Major_deploy/kubernetes/backend.yml
+      shell: kubectl delete -f /home/aryan/Desktop/Placement/Spe_Major_deploy/kubernetes/backend.yml
 
     - name: delete previous frontend yml
-      shell: kubectl delete /home/aryan/Desktop/Placement/Spe_Major_deploy/kubernetes/frontend.yml
+      shell: kubectl delete -f /home/aryan/Desktop/Placement/Spe_Major_deploy/kubernetes/frontend.yml
 
     - name: apply backend
       # become: true
