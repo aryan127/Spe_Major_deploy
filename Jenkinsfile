@@ -47,7 +47,7 @@ pipeline {
 
     environment {
         IMAGE_NAME=''
-        KUBECONFIG='/home/aryan/Desktop/Placement/Spe_Major_deploy/auth.yml'
+       
     }
 
     stages {
